@@ -1,0 +1,44 @@
+.galeria{
+    margin: 20px 0px;
+}
+.text-galeria{
+    text-align: center;
+    margin-bottom: 10px;
+}
+section{
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.linea{
+    width: 300px;
+    height: 10px;
+    background: deeppink;
+    margin:10px 0px;
+}
+article{
+    width: 350px;
+}
+.img-article{
+    width: 100%;
+}
+/*Mediaqueris para Tablets*/
+@media only screen and (max-width:980px){
+    section{
+        width: 90%;
+    }
+    article{
+        width: 45%;
+    }
+}
+/*Mediaqueris para Celulares*/
+@media only screen and (max-width:480px){
+    section{
+        width: 95%;
+    }
+    article{
+        width:100%;
+    }
+}

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPA</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/menu.css">
+    <link rel="stylesheet" href="css/galeria.css">
+    <link rel="stylesheet" href="css/subir.css">
+    <link rel="stylesheet" href="css/preloader.css">
+    <link rel="stylesheet" href="css/testimonios.css">
+    <link rel="stylesheet" href="css/contactos.css">
+    <link rel="stylesheet" href="css/footer.css">
+</head>
+<body>
+    <div id="preloader">
+        <img src="img/preloader.gif" alt="">
+    </div>
+    <div id="inicio"></div>
+    <header id="header">
+        <div class="container">
+            <div id="logo">
+               <img src="img/logo.png" alt="">
+            </div>
+            <!--Inicio del Menu Hamburguesa-->
+            <div class="menu" id="menu" onclick="llamar()">
+                <label class="fa-solid fa-bars"></label>
+            </div>
+            <!--Fin del Menu Hamburguesa-->
+            <nav class="botonera" id="botonera">
+                <ul>
+                    <li><a href="#inicio" class="active">INICIO</a></li>
+                    <li><a href="#nosotros">NOSOTROS</a></li>
+                    <li><a href="#galeria">GALERIA</a></li>
+                    <li><a href="#contactos">CONTACTOS</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <script>
+      let enlaces=document.querySelectorAll(".botonera a");
+        enlaces.forEach((element)=>{
+            element.addEventListener("click", (event)=>{
+                enlaces.forEach((link)=>{
+                    link.classList.remove("active");
+                });
+                    event.target.classList.add("active");
+            });
+        });
+    </script>
+ 
+
+    <div class="banner">
+    <div class="overlay">
+        <div class="cont-banner">
+            <h2>SPA CAOH</h2>
+            <p>Ven y Relajate con Nosotros</p>
+            <button onclick="alert('Gracias por Suscribirse');" id="button">Suscribirse</button>
+        </div>
+    </div>
+    </div>
+    <!--Boton Subir-->
+    <a class="fa-solid fa-angle-up" id="subir" href="#inicio"></a>
+
+   
+    <main id="nosotros">
+        <h2>Nosotros</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum dolorem at quasi quia esse nisi repudiandae tenetur fuga mollitia exercitationem pariatur similique, a nam animi magnam perspiciatis minima ex fugit!
+        Officiis quia omnis eos qui velit ab. Molestias placeat nobis explicabo magnam quas aliquam quaerat architecto, amet rem excepturi enim. Natus eaque nulla numquam iusto ipsam unde repellat dicta assumenda.
+        Placeat, dignissimos veniam! Deserunt veniam doloremque libero possimus officia, rem voluptas aliquam facere dolore vel voluptatibus est ipsa quidem laborum sit recusandae sed iste voluptate nam aut? Cupiditate, eaque vero.</p>
+            <img src="img/spa00.jpg" alt="" class="img-responsive">
+    </main>
+    
+    <!--Testimonio-->
+    <div class="fondo-testimonios">
+        <h2 class="text-testimonios">Nuestros Clientes</h2>
+        <div class="testimonios">
+            <aside>
+                <img src="img/jennifer.jpg" alt="" class="img-testimonios" name="slider">
+            </aside>
+            <aside style="align-self:center;color:white ;">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, adipisci. Qui numquam ipsa sed esse minus. Officia aspernatur dolorem mollitia corporis omnis, ipsa delectus et similique quibusdam veritatis praesentium excepturi?
+               ibus!</p>
+            </aside>
+        </div>
+    </div>
+    <!--Fin de Testimonios-->
+
+    <div class="galeria" id="galeria">
+        <h2 class="text-galeria">NUESTRA GALERIA</h2>
+        <section>
+            <article>
+                <h3>Nuestra Galeria</h3>
+                <hr class="linea">
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Impedit earum inventore, eum accusamus aliquid tempore dignissimos ex quod corrupti dicta nulla, dolorum omnis provident iusto eveniet. Molestiae ad reiciendis debitis?</p>
+            </article>
+            <article style="display:flex;align-items:center;">
+                <button class="btn fa-solid fa-angle-left" onclick="atras()"></button>
+                <img src="img/spa01.jpg" alt="" class="img-article" id="img">
+                <button class="btn fa-solid fa-angle-right" onclick="adelante()"></button>
+            </article>
+        </section>
+    </div>
+
+     <!--Hoja de Contactos-->
+     <div class="fondo-contactos" id="contactos">
+        <h2 class="text-contactos">CONTÁCTANOS</h2>
+        <div class="contactos">
+            <div class="contact">
+                <h2>NUESTRAS SEDES</h2>
+                <ul class="listas">
+                    <li>Arequipa</li>
+                    <li>Cajamarca</li>
+                    <li>Trujillo</li>
+                    <li>Piura</li>
+                    <li>Tumbes</li>
+                    <li>Puno</li>
+                    <li>Cuzco</li>
+                </ul>
+            </div>
+            <div class="contact">
+                <div class="formulario">
+                    <h2>Dejanos un Mensaje</h2>
+                    <form action="procesar.php" method="post">
+                        <p>Apellidos y Nombres</p>
+                        <input type="text" name="nombres" id="" placeholder="Ingresa tus Apellidos y Nombres">
+                        <br>
+                        <p>Correo Electronico</p>
+                        <input type="email" name="correo" id="" placeholder="Ingresa tu Correo Electronico">
+                        <br>
+                        <p>Celular</p>
+                        <input type="number" name="celular" id="" placeholder="Ingresa tu Celular">
+                        <br>
+                        <p>Comentarios</p>
+                        <textarea name="comentarios" id="" cols="30" rows="10"></textarea>
+                        <br>
+                        <input type="submit" value="ENVIAR">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Footer de la Pêgina Web-->
+    <div class="fondo-footer">
+        <div class="footer">
+            <footer>
+                <img src="img/logo.png" alt="" width="180px">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic, dolor?</p>
+            </footer>
+            <footer>
+                <h2>Nuestros Auspiciadores</h2>
+                <ul class="listas">
+                    <li>UTP</li>
+                    <li>Miguel Pallin</li>
+                    <li>Instituto IDAT.</li>
+                    <li>Tecnologia Zero</li>
+                </ul>
+            </footer>
+            <footer>
+                <h2>Visitanos en Nuestras Redes:</h2>
+                <div class="redes">
+                    <i class="ico fa-brands fa-youtube"></i>
+                    <i class="ico fa-brands fa-facebook"></i>
+                    <i class="ico fa-brands fa-instagram"></i>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <div class="fondo-pie">
+        <div class="pies">
+            <div class="pie">
+                <p>Creado y Desarrollado por Tecnologia Zero.</p>
+            </div>
+            <div class="pie">
+                <p>Todos los Derechos Reservados al Insituto IDAT.</p>
+            </div>
+        </div>
+    </div>
+    <script src="js/script.js"></script>
+    <!--Script de Fontawesome-->
+    <script src="https://kit.fontawesome.com/ff10f625f5.js" crossorigin="anonymous"></script>
+</body>
+</html>
